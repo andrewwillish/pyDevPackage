@@ -1,0 +1,4 @@
+X:/TECH/mncTools
+X:/TECH/asiist
+X:/TECH/mncRegistrar
+X:/TECH/constellationRender
