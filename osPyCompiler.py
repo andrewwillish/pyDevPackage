@@ -49,8 +49,8 @@ class crControllerUI(QtGui.QWidget):
 
         if sourcePath!= '' and filename is not None and targetPath is not None:
             #compile source
-            imp.load_source(filename, sourcePath + '/' + filename + '.py')
-
+            #imp.load_source(filename, sourcePath + '/' + filename + '.py')
+            os.system('"C:/Python27/python.exe" -m py_compile '+sourcePath + '/' + filename + '.py')
             #dispatch to server
             if os.path.isfile(targetPath+'/'+filename+'.pyc'):
                 repVar = QtGui.QMessageBox.question(None, 'osPyCompiler', \
@@ -62,7 +62,6 @@ class crControllerUI(QtGui.QWidget):
                     QtGui.QMessageBox.information(None, 'osPyCompiler', \
                                                   'Script dispatched.', QtGui.QMessageBox.Ok)
             else:
-                os.remove(targetPath+'/'+filename+'.pyc')
                 shutil.copy(sourcePath+'/'+filename+'.pyc', targetPath+'/'+filename+'.pyc')
                 QtGui.QMessageBox.information(None, 'osPyCompiler', \
                                               'Script dispatched.', QtGui.QMessageBox.Ok)
@@ -125,6 +124,7 @@ class crControllerUI(QtGui.QWidget):
 
     def refreshSource(self):
         filePath = str(self.main.workPathLineEdit.text())
+        sys.path.append(filePath)
         self.main.pySourceList.clear()
         if os.path.isdir(filePath):
             for item in os.listdir(filePath):

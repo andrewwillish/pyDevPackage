@@ -1,5 +1,5 @@
 <root>
-    <currentWorkPath>Z:/development/constellationRender</currentWorkPath>
+    <currentWorkPath>Z:/development/mncTools</currentWorkPath>
     <targetList>
-    <targetItem>X:/TECH/constellationRender</targetItem></targetList>
+    <targetItem>X:/TECH/constellationRender</targetItem><targetItem>X:/TECH/mncTools</targetItem></targetList>
 </root>
